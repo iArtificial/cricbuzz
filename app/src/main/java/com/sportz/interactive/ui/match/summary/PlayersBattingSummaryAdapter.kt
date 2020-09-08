@@ -32,7 +32,7 @@ class PlayersBattingSummaryAdapter internal constructor(
         val playerSummary = playerSummary[position]
         holder.playerName.text = playerSummary.name
         holder.playerRuns.text = playerSummary.runs
-        holder.playerBalls.text = playerSummary.balls
+        holder.playerBalls.text = "($playerSummary.balls)"
         holder.playerHowOut.text = playerSummary.howOut
     }
 
