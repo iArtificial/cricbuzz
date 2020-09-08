@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/matchInfoFragment">
+    <fragment
+        android:id="@+id/matchInfoFragment"
+        android:name="com.sportz.interactive.ui.match.info.MatchInfoFragment"
+        android:label="fragment_matchinfo"
+        tools:layout="@layout/fragment_matchinfo" />
+    <fragment
+        android:id="@+id/commentaryFragment"
+        android:name="com.sportz.interactive.ui.match.commentary.CommentaryFragment"
+        android:label="commentary_fragment"
+        tools:layout="@layout/commentary_fragment" />
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.sportz.interactive.ui.match.summary.SummaryFragment"
+        android:label="summary_fragment"
+        tools:layout="@layout/summary_fragment" />
+</navigation>

@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.match.MatchActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:background="?colorPrimary"
+        android:theme="@style/AppTheme.NoActionBar" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:contentPadding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_Home"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_nz"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageViewAway"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imageView_Home"
+                android:src="@drawable/ic_in" />
+
+            <TextView
+                android:id="@+id/textView_homeShortName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:text="ENG"
+                app:layout_constraintBottom_toTopOf="@+id/imageView_Home"
+                app:layout_constraintStart_toEndOf="@+id/imageView_Home"
+                app:layout_constraintTop_toTopOf="@+id/imageView_Home"
+                tools:text="ENG" />
+
+            <TextView
+                android:id="@+id/textView_awayShortName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:text="AZ"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewAway"
+                app:layout_constraintEnd_toStartOf="@+id/imageViewAway"
+                app:layout_constraintTop_toTopOf="@+id/imageViewAway"
+                tools:text="NZ" />
+
+            <TextView
+                android:id="@+id/textView_homeRuns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="243/5"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/blue"
+                app:layout_constraintStart_toStartOf="@+id/textView_homeShortName"
+                app:layout_constraintTop_toBottomOf="@+id/textView_homeShortName"
+                tools:text="243/5" />
+
+            <TextView
+                android:id="@+id/textView_awayRuns"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="352"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/textView_awayShortName"
+                app:layout_constraintTop_toBottomOf="@+id/textView_awayShortName"
+                tools:text="352" />
+
+            <TextView
+                android:id="@+id/textView_homeOvers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="36.2"
+                app:layout_constraintStart_toStartOf="@+id/textView_homeRuns"
+                app:layout_constraintTop_toBottomOf="@+id/textView_homeRuns"
+                tools:text="36.2" />
+
+            <TextView
+                android:id="@+id/textView_awayOvers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="50.0"
+                app:layout_constraintEnd_toEndOf="@+id/textView_awayRuns"
+                app:layout_constraintTop_toBottomOf="@+id/textView_awayRuns"
+                tools:text="50.0" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="345dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="32dp"
+                android:background="?android:attr/listDivider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView_Home" />
+
+            <TextView
+                android:id="@+id/textView_result"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="16dp"
+                android:textColor="@color/blue"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                tools:text="England needs 109 runs from 82 balls to win"
+                android:gravity="center_horizontal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+    <fragment
+        android:id="@+id/nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:menu="@menu/bottom_nav" />
+
+</LinearLayout>
